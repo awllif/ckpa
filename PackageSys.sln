@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK_PluginWareHouse", "CK_PluginWareHouse\CK_PluginWareHouse.csproj", "{8C9ECC4F-B5EE-417B-BA62-E21DE3E0BEAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK_PluginOrder", "CK_PluginOrder\CK_PluginOrder.csproj", "{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK_PluginBaseData", "CK_PluginBaseData\CK_PluginBaseData.csproj", "{517CC8F0-1765-4F94-8CA2-32040F7309DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C9ECC4F-B5EE-417B-BA62-E21DE3E0BEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9ECC4F-B5EE-417B-BA62-E21DE3E0BEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9ECC4F-B5EE-417B-BA62-E21DE3E0BEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9ECC4F-B5EE-417B-BA62-E21DE3E0BEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517CC8F0-1765-4F94-8CA2-32040F7309DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517CC8F0-1765-4F94-8CA2-32040F7309DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517CC8F0-1765-4F94-8CA2-32040F7309DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517CC8F0-1765-4F94-8CA2-32040F7309DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

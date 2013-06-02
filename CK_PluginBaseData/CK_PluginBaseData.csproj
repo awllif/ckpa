@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{517CC8F0-1765-4F94-8CA2-32040F7309DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CK_PluginBaseData</RootNamespace>
+    <AssemblyName>CK_PluginBaseData</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guifreaks.Common, Version=0.1.0.0, Culture=neutral, PublicKeyToken=c3c25e41a6abca42, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\Guifreaks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Guifreaks.NavigationBar, Version=0.1.0.0, Culture=neutral, PublicKeyToken=bf0afd6b35ed9434, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\Guifreaks.NavigationBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Rock.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\Rock.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Rock.Container, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\Rock.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Rock.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\Rock.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xthemecore_macos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BaseSystem\Start\bin\Debug\xthemecore_macos.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CatalogCompany_Qurey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CatalogCompany_Qurey.Designer.cs">
+      <DependentUpon>CatalogCompany_Qurey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogType_Qurey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CatalogType_Qurey.Designer.cs">
+      <DependentUpon>CatalogType_Qurey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalog_Qurey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catalog_Qurey.Designer.cs">
+      <DependentUpon>Catalog_Qurey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormCatalogCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogCompany.Designer.cs">
+      <DependentUpon>FormCatalogCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCatalogProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogProduct.Designer.cs">
+      <DependentUpon>FormCatalogProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProType.Designer.cs">
+      <DependentUpon>FormProType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QueryProType.Designer.cs">
+      <DependentUpon>QueryProType.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CatalogCompany_Qurey.resx">
+      <DependentUpon>CatalogCompany_Qurey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogType_Qurey.resx">
+      <DependentUpon>CatalogType_Qurey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalog_Qurey.resx">
+      <DependentUpon>Catalog_Qurey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class1.resx">
+      <DependentUpon>Class1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCatalogCompany.resx">
+      <DependentUpon>FormCatalogCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCatalogProduct.resx">
+      <DependentUpon>FormCatalogProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProType.resx">
+      <DependentUpon>FormProType.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
