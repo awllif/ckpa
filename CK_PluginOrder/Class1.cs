@@ -24,9 +24,9 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("创建订单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
-            Command cmdEdit = new Command("订单编辑", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
-            Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
+            Command cmdAdd = new Command("创建申请", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            Command cmdEdit = new Command("申请编辑", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
+            Command cmdDetail = new Command("申请查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
             cmdEdit.Click += new EventHandler(cmdEdit_Click);
@@ -81,12 +81,12 @@ namespace CK_PluginOrder
 
         }
     }
-    [PlugNameAttribute("采购下单"),
+    [PlugNameAttribute("采购咨询"),
     PlugQueryFormAttribute("Order_Qurey"),
     PlugWriterAttribute(""),
     PlugQueryCmdAttribute("8b904afc-6b23-4bd7-ae33-3ce8a7f93cdf"),
-    PlugActionAttribute("商品类别"),
-    PlugDescriptionAttribute("商品类别 ")]
+    PlugActionAttribute("采购咨询"),
+    PlugDescriptionAttribute("采购部门按照采购申请要求咨询相关供应商，收集商品信息")]
     public partial class CKPlugBuyOrder : PluginNode
     {
         public CKPlugBuyOrder()
@@ -96,15 +96,15 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("采购下单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
-            Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
-            Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
+            Command cmdAdd = new Command("采购确认", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            //Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
+            //Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
-            cmdEdit.Click += new EventHandler(cmdEdit_Click);
-            cmdDetail.Click += new EventHandler(cmdDetail_Click);
+            //cmdEdit.Click += new EventHandler(cmdEdit_Click);
+            //cmdDetail.Click += new EventHandler(cmdDetail_Click);
             //建立功能按钮点击处理函数
-            RegCommand(cmdAdd, cmdEdit, cmdDetail);
+            RegCommand(cmdAdd);
             //标题,字段,宽度,是否主键,是否显示
             this.InitialCaption();
             ////颜色控制列表
