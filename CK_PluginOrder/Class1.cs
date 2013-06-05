@@ -61,14 +61,18 @@ namespace CK_PluginOrder
         }
         void cmdEdit_Click(object sender, EventArgs e)
         {
-
+            IRight ir = (IRight)iapplication.GetService(typeof(IRight));
+            FormBuyApplay FBA = new FormBuyApplay(iapplication, idataservice, GetPlugQueryCmdInfo());
+            FBA.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
+            FBA.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
+            FBA.ShowForm(FormType.Edit);
         }
         void cmdAdd_Click(object sender, EventArgs e)
         {
             IRight ir = (IRight)iapplication.GetService(typeof(IRight));
             FormBuyApplay FBA = new FormBuyApplay(iapplication, idataservice, GetPlugQueryCmdInfo());
-            //FBA.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
-            //FBA.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
+            FBA.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
+            FBA.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
             FBA.ShowForm(FormType.Insert);
            // FormCreateOrder FCO = new FormCreateOrder(iapplication,idataservice,GetPlugQueryCmdInfo());
            // 

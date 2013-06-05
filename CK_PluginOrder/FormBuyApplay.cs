@@ -23,9 +23,10 @@ namespace CK_PluginOrder
         public override void AfterShowForm()
         {
             IRight ir = (IRight)iapplication.GetService(typeof(IRight));
-            textBox1.Text = ir.UserName;
-            textBox2.Text = ir.AgencyName;
-            myOrderNumber.FieldValue = "SQ"+ ir.UserId + DateTime.Now.ToString("yyMMddhhmmss");
+            myUserName.FieldValue = ir.UserName;
+            myAgencyName.FieldValue = ir.AgencyName;
+            if(FType == FormType.Insert)
+                myOrderNumber.FieldValue = "SQ"+ ir.UserId + DateTime.Now.ToString("yyMMddhhmmss");
             base.AfterShowForm();
         }
 

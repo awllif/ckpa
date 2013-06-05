@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.myEditTextBox1 = new Rock.Interface.MyEditTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.myEditTextBox2 = new Rock.Interface.MyEditTextBox();
             this.myOrderNumber = new Rock.Interface.MyEditTextBox();
             this.myEditComboBox1 = new Rock.Interface.MyEditComboBox();
@@ -43,31 +41,33 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.myEditTextBox3 = new Bird.Interface.MyEditTextBox();
-            this.myEditTextBox4 = new Bird.Interface.MyEditTextBox();
+            this.myEditTextBox3 = new Rock.Interface.MyEditTextBox();
+            this.myEditTextBox4 = new Rock.Interface.MyEditTextBox();
+            this.myUserName = new Rock.Interface.MyEditTextBox();
+            this.myAgencyName = new Rock.Interface.MyEditTextBox();
             this.pnelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdMaxRes
             // 
-            this.cmdMaxRes.Location = new System.Drawing.Point(437, 3);
+            this.cmdMaxRes.Location = new System.Drawing.Point(435, 3);
             // 
             // cmdMin
             // 
-            this.cmdMin.Location = new System.Drawing.Point(412, 3);
+            this.cmdMin.Location = new System.Drawing.Point(410, 3);
             // 
             // titleCaption
             // 
-            this.titleCaption.Size = new System.Drawing.Size(482, 26);
-            this.titleCaption.Text = "FormBuyApplay";
+            this.titleCaption.Size = new System.Drawing.Size(480, 26);
+            this.titleCaption.Text = "采购申请单";
             // 
             // pnelMain
             // 
+            this.pnelMain.Controls.Add(this.myAgencyName);
+            this.pnelMain.Controls.Add(this.myUserName);
             this.pnelMain.Controls.Add(this.myEditTextBox4);
             this.pnelMain.Controls.Add(this.myEditTextBox3);
             this.pnelMain.Controls.Add(this.myEditTextBox1);
-            this.pnelMain.Controls.Add(this.textBox2);
-            this.pnelMain.Controls.Add(this.textBox1);
             this.pnelMain.Controls.Add(this.myEditTextBox2);
             this.pnelMain.Controls.Add(this.myOrderNumber);
             this.pnelMain.Controls.Add(this.myEditComboBox1);
@@ -80,7 +80,7 @@
             this.pnelMain.Controls.Add(this.butCancel);
             this.pnelMain.Controls.Add(this.label3);
             this.pnelMain.Controls.Add(this.label2);
-            this.pnelMain.Size = new System.Drawing.Size(480, 290);
+            this.pnelMain.Size = new System.Drawing.Size(478, 288);
             // 
             // myEditTextBox1
             // 
@@ -105,22 +105,6 @@
             this.myEditTextBox1.TabIndex = 1;
             this.myEditTextBox1.TableName = null;
             this.myEditTextBox1.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(366, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(219, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 3;
             // 
             // myEditTextBox2
             // 
@@ -281,7 +265,7 @@
             // myEditTextBox3
             // 
             this.myEditTextBox3.Datarow = null;
-            this.myEditTextBox3.EditField = "F_REASION";
+            this.myEditTextBox3.EditField = "f_reasion";
             this.myEditTextBox3.EditFieldType = System.Data.SqlDbType.VarChar;
             this.myEditTextBox3.FieldMaxLength = 500;
             this.myEditTextBox3.FieldMinLength = 0;
@@ -292,12 +276,13 @@
             this.myEditTextBox3.IsKeyField = false;
             this.myEditTextBox3.IsValid = true;
             this.myEditTextBox3.Location = new System.Drawing.Point(64, 78);
+            this.myEditTextBox3.MaxLength = 1000;
             this.myEditTextBox3.Multiline = true;
             this.myEditTextBox3.Name = "myEditTextBox3";
             this.myEditTextBox3.RegexDesc = "";
             this.myEditTextBox3.RegexRule = "";
             this.myEditTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.myEditTextBox3.ShowField = "F_REASION";
+            this.myEditTextBox3.ShowField = "f_reasion";
             this.myEditTextBox3.ShowFieldValue = null;
             this.myEditTextBox3.Size = new System.Drawing.Size(402, 47);
             this.myEditTextBox3.TabIndex = 5;
@@ -306,7 +291,7 @@
             // myEditTextBox4
             // 
             this.myEditTextBox4.Datarow = null;
-            this.myEditTextBox4.EditField = "F_DESC";
+            this.myEditTextBox4.EditField = "f_desc";
             this.myEditTextBox4.EditFieldType = System.Data.SqlDbType.VarChar;
             this.myEditTextBox4.FieldMaxLength = 500;
             this.myEditTextBox4.FieldMinLength = 0;
@@ -316,26 +301,73 @@
             this.myEditTextBox4.IsIdentified = false;
             this.myEditTextBox4.IsKeyField = false;
             this.myEditTextBox4.IsValid = true;
-            this.myEditTextBox4.Location = new System.Drawing.Point(64, 131);
+            this.myEditTextBox4.Location = new System.Drawing.Point(64, 128);
+            this.myEditTextBox4.MaxLength = 1000;
             this.myEditTextBox4.Multiline = true;
             this.myEditTextBox4.Name = "myEditTextBox4";
             this.myEditTextBox4.RegexDesc = "";
             this.myEditTextBox4.RegexRule = "";
             this.myEditTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.myEditTextBox4.ShowField = "F_DESC";
+            this.myEditTextBox4.ShowField = "f_desc";
             this.myEditTextBox4.ShowFieldValue = null;
-            this.myEditTextBox4.Size = new System.Drawing.Size(402, 119);
+            this.myEditTextBox4.Size = new System.Drawing.Size(402, 122);
             this.myEditTextBox4.TabIndex = 6;
             this.myEditTextBox4.TableName = null;
+            // 
+            // myUserName
+            // 
+            this.myUserName.Datarow = null;
+            this.myUserName.EditField = "F_CREATENAME";
+            this.myUserName.EditFieldType = System.Data.SqlDbType.VarChar;
+            this.myUserName.FieldMaxLength = 0;
+            this.myUserName.FieldMinLength = 0;
+            this.myUserName.FieldValue = "";
+            this.myUserName.iapplication = null;
+            this.myUserName.IsCanEdit = true;
+            this.myUserName.IsIdentified = false;
+            this.myUserName.IsKeyField = false;
+            this.myUserName.IsValid = true;
+            this.myUserName.Location = new System.Drawing.Point(219, 43);
+            this.myUserName.Name = "myUserName";
+            this.myUserName.RegexDesc = "";
+            this.myUserName.RegexRule = "";
+            this.myUserName.ShowField = "f_createname";
+            this.myUserName.ShowFieldValue = null;
+            this.myUserName.Size = new System.Drawing.Size(100, 21);
+            this.myUserName.TabIndex = 3;
+            this.myUserName.TableName = null;
+            // 
+            // myAgencyName
+            // 
+            this.myAgencyName.Datarow = null;
+            this.myAgencyName.EditField = "F_AGENCYNAME";
+            this.myAgencyName.EditFieldType = System.Data.SqlDbType.VarChar;
+            this.myAgencyName.FieldMaxLength = 0;
+            this.myAgencyName.FieldMinLength = 0;
+            this.myAgencyName.FieldValue = "";
+            this.myAgencyName.iapplication = null;
+            this.myAgencyName.IsCanEdit = true;
+            this.myAgencyName.IsIdentified = false;
+            this.myAgencyName.IsKeyField = false;
+            this.myAgencyName.IsValid = true;
+            this.myAgencyName.Location = new System.Drawing.Point(366, 42);
+            this.myAgencyName.Name = "myAgencyName";
+            this.myAgencyName.RegexDesc = "";
+            this.myAgencyName.RegexRule = "";
+            this.myAgencyName.ShowField = "F_AGENCYNAME";
+            this.myAgencyName.ShowFieldValue = null;
+            this.myAgencyName.Size = new System.Drawing.Size(100, 21);
+            this.myAgencyName.TabIndex = 4;
+            this.myAgencyName.TableName = null;
             // 
             // FormBuyApplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 320);
+            this.ClientSize = new System.Drawing.Size(482, 318);
             this.Name = "FormBuyApplay";
             this.Table = "CK_BUYORDER";
-            this.Text = "FormBuyApplay";
+            this.Text = "采购申请单";
             this.pnelMain.ResumeLayout(false);
             this.pnelMain.PerformLayout();
             this.ResumeLayout(false);
@@ -345,8 +377,6 @@
         #endregion
 
         private Rock.Interface.MyEditTextBox myEditTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private Rock.Interface.MyEditTextBox myEditTextBox2;
         private Rock.Interface.MyEditTextBox myOrderNumber;
         private Rock.Interface.MyEditComboBox myEditComboBox1;
@@ -359,7 +389,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private Bird.Interface.MyEditTextBox myEditTextBox4;
-        private Bird.Interface.MyEditTextBox myEditTextBox3;
+        private Rock.Interface.MyEditTextBox myEditTextBox4;
+        private Rock.Interface.MyEditTextBox myEditTextBox3;
+        private Rock.Interface.MyEditTextBox myAgencyName;
+        private Rock.Interface.MyEditTextBox myUserName;
     }
 }
