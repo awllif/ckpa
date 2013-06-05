@@ -81,7 +81,7 @@ namespace CK_PluginOrder
 
         }
     }
-    [PlugNameAttribute("采购下单"),
+    [PlugNameAttribute("采购咨询"),
     PlugQueryFormAttribute("Order_Qurey"),
     PlugWriterAttribute(""),
     PlugQueryCmdAttribute("8b904afc-6b23-4bd7-ae33-3ce8a7f93cdf"),
@@ -96,9 +96,9 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("采购下单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
-            Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
-            Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
+            Command cmdAdd = new Command("明细确认", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            //Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
+            //Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
             cmdEdit.Click += new EventHandler(cmdEdit_Click);
@@ -145,7 +145,7 @@ namespace CK_PluginOrder
         }
     }
 
-    [PlugNameAttribute("采购处理"),
+    [PlugNameAttribute("采购管理"),
     PlugQueryFormAttribute("Order_Qurey"),
     PlugWriterAttribute(""),
     PlugQueryCmdAttribute("8b904afc-6b23-4bd7-ae33-3ce8a7f93cdf"),
@@ -160,15 +160,15 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("到货验收", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
-            Command cmdEdit = new Command("采购付款", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
-            Command cmdDetail = new Command("采购入库", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
-            // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
+            Command cmdAdd = new Command("创建采购单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            Command cmdPackage = new Command("到货确认", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
+            Command cmdPay = new Command("订单付款", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
+            Command cmdPrint = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
             cmdEdit.Click += new EventHandler(cmdEdit_Click);
             cmdDetail.Click += new EventHandler(cmdDetail_Click);
             //建立功能按钮点击处理函数
-            RegCommand(cmdAdd, cmdEdit, cmdDetail);
+            RegCommand(cmdAdd, cmdPackage, cmdPay,cmdPrint);
 
             //标题,字段,宽度,是否主键,是否显示
             this.InitialCaption();
