@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.myEditTextBox3 = new Bird.Interface.MyEditTextBox();
+            this.myEditTextBox4 = new Bird.Interface.MyEditTextBox();
             this.pnelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,8 @@
             // 
             // pnelMain
             // 
+            this.pnelMain.Controls.Add(this.myEditTextBox4);
+            this.pnelMain.Controls.Add(this.myEditTextBox3);
             this.pnelMain.Controls.Add(this.myEditTextBox1);
             this.pnelMain.Controls.Add(this.textBox2);
             this.pnelMain.Controls.Add(this.textBox1);
@@ -76,7 +80,7 @@
             this.pnelMain.Controls.Add(this.butCancel);
             this.pnelMain.Controls.Add(this.label3);
             this.pnelMain.Controls.Add(this.label2);
-            this.pnelMain.Size = new System.Drawing.Size(480, 232);
+            this.pnelMain.Size = new System.Drawing.Size(480, 290);
             // 
             // myEditTextBox1
             // 
@@ -98,7 +102,7 @@
             this.myEditTextBox1.ShowField = "f_id";
             this.myEditTextBox1.ShowFieldValue = null;
             this.myEditTextBox1.Size = new System.Drawing.Size(100, 21);
-            this.myEditTextBox1.TabIndex = 79;
+            this.myEditTextBox1.TabIndex = 1;
             this.myEditTextBox1.TableName = null;
             this.myEditTextBox1.Visible = false;
             // 
@@ -108,7 +112,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 78;
+            this.textBox2.TabIndex = 4;
             // 
             // textBox1
             // 
@@ -116,7 +120,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 77;
+            this.textBox1.TabIndex = 3;
             // 
             // myEditTextBox2
             // 
@@ -138,7 +142,7 @@
             this.myEditTextBox2.ShowField = "F_AMOUNT";
             this.myEditTextBox2.ShowFieldValue = null;
             this.myEditTextBox2.Size = new System.Drawing.Size(100, 21);
-            this.myEditTextBox2.TabIndex = 67;
+            this.myEditTextBox2.TabIndex = 2;
             this.myEditTextBox2.TableName = null;
             this.myEditTextBox2.Text = "0";
             // 
@@ -162,7 +166,7 @@
             this.myOrderNumber.ShowField = "F_ORDERNUMBER";
             this.myOrderNumber.ShowFieldValue = null;
             this.myOrderNumber.Size = new System.Drawing.Size(100, 21);
-            this.myOrderNumber.TabIndex = 63;
+            this.myOrderNumber.TabIndex = 0;
             this.myOrderNumber.TableName = null;
             // 
             // myEditComboBox1
@@ -181,24 +185,25 @@
             this.myEditComboBox1.IsKeyField = false;
             this.myEditComboBox1.IsValid = true;
             this.myEditComboBox1.ItemsSql = "SELECT f_value as f_state,f_name from t_base_dict where f_code=\'CM_OSTATE\'";
-            this.myEditComboBox1.Location = new System.Drawing.Point(219, 197);
+            this.myEditComboBox1.Location = new System.Drawing.Point(64, 259);
             this.myEditComboBox1.Name = "myEditComboBox1";
             this.myEditComboBox1.RegexDesc = "";
             this.myEditComboBox1.RegexRule = "";
             this.myEditComboBox1.ShowField = "f_name";
             this.myEditComboBox1.ShowFieldValue = "";
             this.myEditComboBox1.Size = new System.Drawing.Size(90, 20);
-            this.myEditComboBox1.TabIndex = 66;
+            this.myEditComboBox1.TabIndex = 7;
             this.myEditComboBox1.TableName = "";
             // 
             // butOk
             // 
-            this.butOk.Location = new System.Drawing.Point(310, 196);
+            this.butOk.Location = new System.Drawing.Point(303, 256);
             this.butOk.Name = "butOk";
             this.butOk.Size = new System.Drawing.Size(75, 23);
-            this.butOk.TabIndex = 69;
+            this.butOk.TabIndex = 8;
             this.butOk.Text = "保存";
             this.butOk.UseVisualStyleBackColor = true;
+            this.butOk.Click += new System.EventHandler(this.butOk_Click);
             // 
             // label1
             // 
@@ -229,12 +234,13 @@
             // 
             // butCancel
             // 
-            this.butCancel.Location = new System.Drawing.Point(391, 197);
+            this.butCancel.Location = new System.Drawing.Point(384, 257);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(75, 23);
-            this.butCancel.TabIndex = 70;
+            this.butCancel.TabIndex = 9;
             this.butCancel.Text = "离开";
             this.butCancel.UseVisualStyleBackColor = true;
+            this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
             // label3
             // 
@@ -248,7 +254,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(178, 200);
+            this.label2.Location = new System.Drawing.Point(16, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 75;
@@ -261,7 +267,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 12);
             this.label6.TabIndex = 76;
-            this.label6.Text = "采购说明:";
+            this.label6.Text = "采购原因:";
             // 
             // label7
             // 
@@ -272,12 +278,63 @@
             this.label7.TabIndex = 76;
             this.label7.Text = "采购详情:";
             // 
+            // myEditTextBox3
+            // 
+            this.myEditTextBox3.Datarow = null;
+            this.myEditTextBox3.EditField = "F_REASION";
+            this.myEditTextBox3.EditFieldType = System.Data.SqlDbType.VarChar;
+            this.myEditTextBox3.FieldMaxLength = 500;
+            this.myEditTextBox3.FieldMinLength = 0;
+            this.myEditTextBox3.FieldValue = "";
+            this.myEditTextBox3.iapplication = null;
+            this.myEditTextBox3.IsCanEdit = true;
+            this.myEditTextBox3.IsIdentified = false;
+            this.myEditTextBox3.IsKeyField = false;
+            this.myEditTextBox3.IsValid = true;
+            this.myEditTextBox3.Location = new System.Drawing.Point(64, 78);
+            this.myEditTextBox3.Multiline = true;
+            this.myEditTextBox3.Name = "myEditTextBox3";
+            this.myEditTextBox3.RegexDesc = "";
+            this.myEditTextBox3.RegexRule = "";
+            this.myEditTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.myEditTextBox3.ShowField = "F_REASION";
+            this.myEditTextBox3.ShowFieldValue = null;
+            this.myEditTextBox3.Size = new System.Drawing.Size(402, 47);
+            this.myEditTextBox3.TabIndex = 5;
+            this.myEditTextBox3.TableName = null;
+            // 
+            // myEditTextBox4
+            // 
+            this.myEditTextBox4.Datarow = null;
+            this.myEditTextBox4.EditField = "F_DESC";
+            this.myEditTextBox4.EditFieldType = System.Data.SqlDbType.VarChar;
+            this.myEditTextBox4.FieldMaxLength = 500;
+            this.myEditTextBox4.FieldMinLength = 0;
+            this.myEditTextBox4.FieldValue = "";
+            this.myEditTextBox4.iapplication = null;
+            this.myEditTextBox4.IsCanEdit = true;
+            this.myEditTextBox4.IsIdentified = false;
+            this.myEditTextBox4.IsKeyField = false;
+            this.myEditTextBox4.IsValid = true;
+            this.myEditTextBox4.Location = new System.Drawing.Point(64, 131);
+            this.myEditTextBox4.Multiline = true;
+            this.myEditTextBox4.Name = "myEditTextBox4";
+            this.myEditTextBox4.RegexDesc = "";
+            this.myEditTextBox4.RegexRule = "";
+            this.myEditTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.myEditTextBox4.ShowField = "F_DESC";
+            this.myEditTextBox4.ShowFieldValue = null;
+            this.myEditTextBox4.Size = new System.Drawing.Size(402, 119);
+            this.myEditTextBox4.TabIndex = 6;
+            this.myEditTextBox4.TableName = null;
+            // 
             // FormBuyApplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 262);
+            this.ClientSize = new System.Drawing.Size(484, 320);
             this.Name = "FormBuyApplay";
+            this.Table = "CK_BUYORDER";
             this.Text = "FormBuyApplay";
             this.pnelMain.ResumeLayout(false);
             this.pnelMain.PerformLayout();
@@ -302,5 +359,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private Bird.Interface.MyEditTextBox myEditTextBox4;
+        private Bird.Interface.MyEditTextBox myEditTextBox3;
     }
 }

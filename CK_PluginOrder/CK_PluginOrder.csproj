@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3DD1DF1C-890A-4B9A-AC43-0895A5FB1652}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bird.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\新平台结构\BaseSystem\Start\bin\Debug\Bird.Interface.dll</HintPath>
+    </Reference>
     <Reference Include="Guifreaks.Common, Version=0.1.0.0, Culture=neutral, PublicKeyToken=c3c25e41a6abca42, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\BaseSystem\Start\bin\Debug\Guifreaks.Common.dll</HintPath>
@@ -72,23 +76,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormBuyApplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuyApplay.Designer.cs">
+      <DependentUpon>FormBuyApplay.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCreateOrder.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCreateOrder.Designer.cs">
       <DependentUpon>FormCreateOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProductDetail.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProductDetail.Designer.cs">
       <DependentUpon>FormProductDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProductInfo.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProductInfo.Designer.cs">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Order_Qurey.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Order_Qurey.Designer.cs">
       <DependentUpon>Order_Qurey.cs</DependentUpon>
@@ -103,6 +118,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Class1.resx">
       <DependentUpon>Class1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuyApplay.resx">
+      <DependentUpon>FormBuyApplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateOrder.resx">
       <DependentUpon>FormCreateOrder.cs</DependentUpon>

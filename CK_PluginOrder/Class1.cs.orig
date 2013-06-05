@@ -65,17 +65,13 @@ namespace CK_PluginOrder
         }
         void cmdAdd_Click(object sender, EventArgs e)
         {
+            FormCreateOrder FCO = new FormCreateOrder(iapplication,idataservice,GetPlugQueryCmdInfo());
             IRight ir = (IRight)iapplication.GetService(typeof(IRight));
-            FormBuyApplay FBA = new FormBuyApplay(iapplication, idataservice, GetPlugQueryCmdInfo());
-            //FBA.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
-            //FBA.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
-            FBA.ShowForm(FormType.Insert);
-           // FormCreateOrder FCO = new FormCreateOrder(iapplication,idataservice,GetPlugQueryCmdInfo());
-           // 
-           // 
-           //// FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
-           //// FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
-           // FCO.ShowForm(FormType.Insert);
+            FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
+            FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
+           // FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
+           // FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
+            FCO.ShowForm(FormType.Insert);
         }
 
         private void InitializeComponent()
@@ -100,7 +96,11 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("采购下单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+<<<<<<< HEAD
+            Command cmdAdd = new Command("采购确认", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+=======
+            Command cmdAdd = new Command("明细确认", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+>>>>>>> a64f793ab857a67514bcb7c450bfce7d8be1e458
             //Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             //Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
@@ -149,7 +149,7 @@ namespace CK_PluginOrder
         }
     }
 
-    [PlugNameAttribute("采购处理"),
+    [PlugNameAttribute("采购管理"),
     PlugQueryFormAttribute("Order_Qurey"),
     PlugWriterAttribute(""),
     PlugQueryCmdAttribute("8b904afc-6b23-4bd7-ae33-3ce8a7f93cdf"),
@@ -169,7 +169,8 @@ namespace CK_PluginOrder
             Command cmdPay = new Command("订单付款", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             Command cmdPrint = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
-     
+            cmdEdit.Click += new EventHandler(cmdEdit_Click);
+            cmdDetail.Click += new EventHandler(cmdDetail_Click);
             //建立功能按钮点击处理函数
             RegCommand(cmdAdd, cmdPackage, cmdPay,cmdPrint);
 
@@ -204,13 +205,12 @@ namespace CK_PluginOrder
         }
         void cmdAdd_Click(object sender, EventArgs e)
         {
-     
-            //FormCreateOrder FCO = new FormCreateOrder(iapplication, idataservice,GetPlugQueryCmdInfo());
-            //IRight ir = (IRight)iapplication.GetService(typeof(IRight));
-            //FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
-            //// FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
-            //// FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
-            //FCO.ShowForm(FormType.Insert);
+            FormCreateOrder FCO = new FormCreateOrder(iapplication, idataservice,GetPlugQueryCmdInfo());
+            IRight ir = (IRight)iapplication.GetService(typeof(IRight));
+            FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
+            // FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
+            // FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
+            FCO.ShowForm(FormType.Insert);
         }
     }
 }
