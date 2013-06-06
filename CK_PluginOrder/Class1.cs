@@ -48,6 +48,14 @@ namespace CK_PluginOrder
 
         void cmdDetail_Click(object sender, EventArgs e)
         {
+            //从应用程序中获得打印服务实例
+            IReport Ir = (IReport)iapplication.GetService(typeof(IReport));
+            //从应用程序中获得数据访问服务实例
+            IAdapter iadp = (IAdapter)iapplication.GetService(typeof(IAdapter));
+            // ILog llll = (ILog)iapplication.GetService(typeof(ILog));
+            string ReportTemple = (string)iadp.RunCmdnoCheck("AFunction3", new Object[] { "b0e5c8a8-37bc-4d85-b086-0f733616e9a5" });
+            Ir.PrintPreView(ReportTemple, iapplication.MainDataView.XmlData.Replace("$f_printuser$", ((IRight)iapplication.GetService(typeof(IRight))).UserName));
+
 //            throw new NotImplementedException();
         }
         void cmdPrint_Click(object sender, EventArgs e)
