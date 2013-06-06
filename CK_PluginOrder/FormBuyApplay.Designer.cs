@@ -45,6 +45,7 @@
             this.myEditTextBox4 = new Rock.Interface.MyEditTextBox();
             this.myUserName = new Rock.Interface.MyEditTextBox();
             this.myAgencyName = new Rock.Interface.MyEditTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@
             this.pnelMain.Controls.Add(this.label4);
             this.pnelMain.Controls.Add(this.label5);
             this.pnelMain.Controls.Add(this.butCancel);
+            this.pnelMain.Controls.Add(this.label8);
             this.pnelMain.Controls.Add(this.label3);
             this.pnelMain.Controls.Add(this.label2);
             this.pnelMain.Size = new System.Drawing.Size(478, 288);
@@ -95,7 +97,7 @@
             this.myEditTextBox1.IsIdentified = true;
             this.myEditTextBox1.IsKeyField = true;
             this.myEditTextBox1.IsValid = true;
-            this.myEditTextBox1.Location = new System.Drawing.Point(219, 6);
+            this.myEditTextBox1.Location = new System.Drawing.Point(366, 5);
             this.myEditTextBox1.Name = "myEditTextBox1";
             this.myEditTextBox1.RegexDesc = "";
             this.myEditTextBox1.RegexRule = "";
@@ -360,6 +362,15 @@
             this.myAgencyName.TabIndex = 4;
             this.myAgencyName.TableName = null;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(172, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "完成时间";
+            // 
             // FormBuyApplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -393,5 +404,6 @@
         private Rock.Interface.MyEditTextBox myEditTextBox3;
         private Rock.Interface.MyEditTextBox myAgencyName;
         private Rock.Interface.MyEditTextBox myUserName;
+        private System.Windows.Forms.Label label8;
     }
 }
