@@ -180,6 +180,7 @@ namespace CK_PluginOrder
             Command cmdPackage = new Command("到货确认", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             Command cmdPay = new Command("订单付款", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             Command cmdPrint = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
+            Command cmdStore = new Command("采购入库", iapplication, CommandTriger.ON, (int)ImageType.CONFIG);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
      
             //建立功能按钮点击处理函数
