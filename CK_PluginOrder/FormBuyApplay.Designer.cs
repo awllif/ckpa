@@ -212,11 +212,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(331, 45);
+            this.label5.Location = new System.Drawing.Point(311, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 73;
-            this.label5.Text = "部门";
+            this.label5.Text = "申请部门";
             // 
             // butCancel
             // 
@@ -231,11 +231,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(172, 46);
+            this.label3.Location = new System.Drawing.Point(168, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 72;
-            this.label3.Text = "创建人";
+            this.label3.Text = "申请人";
             // 
             // label2
             // 
@@ -335,7 +335,7 @@
             this.myUserName.RegexRule = "";
             this.myUserName.ShowField = "f_createname";
             this.myUserName.ShowFieldValue = null;
-            this.myUserName.Size = new System.Drawing.Size(100, 21);
+            this.myUserName.Size = new System.Drawing.Size(90, 21);
             this.myUserName.TabIndex = 3;
             this.myUserName.TableName = null;
             // 
@@ -365,7 +365,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(172, 14);
+            this.label8.Location = new System.Drawing.Point(168, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 72;

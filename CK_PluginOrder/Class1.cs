@@ -25,7 +25,7 @@ namespace CK_PluginOrder
             //NodeBitmap = Resource.driver;
             //注册功能按钮
             Command cmdAdd = new Command("创建申请", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
-            Command cmdEdit = new Command("申请编辑", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
+            Command cmdEdit = new Command("申请编辑", iapplication, CommandTriger.ON, (int)ImageType.EDIT,"F_STATE","0");
             Command cmdDetail = new Command("申请查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
@@ -112,7 +112,7 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("采购下单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            Command cmdAdd = new Command("采购添加", iapplication, CommandTriger.ON, (int)ImageType.ADD);
             //Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             //Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
@@ -157,7 +157,7 @@ namespace CK_PluginOrder
             FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
             // FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
             // FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
-            FCO.ShowForm(FormType.Insert);
+            FCO.ShowForm(FormType.Edit);
         }
     }
 
@@ -180,7 +180,7 @@ namespace CK_PluginOrder
             Command cmdPackage = new Command("到货确认", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             Command cmdPay = new Command("订单付款", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             Command cmdPrint = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
-            Command cmdStore = new Command("采购入库", iapplication, CommandTriger.ON, (int)ImageType.CONFIG);
+            Command cmdStore = new Command("采购入库", iapplication, CommandTriger.ON, (int)ImageType.CONFIG01);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
      
             //建立功能按钮点击处理函数
