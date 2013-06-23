@@ -46,15 +46,15 @@
             // 
             // cmdMaxRes
             // 
-            this.cmdMaxRes.Location = new System.Drawing.Point(204, 3);
+            this.cmdMaxRes.Location = new System.Drawing.Point(205, 3);
             // 
             // cmdMin
             // 
-            this.cmdMin.Location = new System.Drawing.Point(179, 3);
+            this.cmdMin.Location = new System.Drawing.Point(180, 3);
             // 
             // titleCaption
             // 
-            this.titleCaption.Size = new System.Drawing.Size(249, 26);
+            this.titleCaption.Size = new System.Drawing.Size(250, 26);
             this.titleCaption.Text = "仓库管理";
             // 
             // pnelMain
@@ -72,7 +72,7 @@
             this.pnelMain.Controls.Add(this.myEditTextBox3);
             this.pnelMain.Controls.Add(this.myEditTextBox2);
             this.pnelMain.Controls.Add(this.myEditTextBox1);
-            this.pnelMain.Size = new System.Drawing.Size(247, 213);
+            this.pnelMain.Size = new System.Drawing.Size(248, 222);
             // 
             // button2
             // 
@@ -245,7 +245,7 @@
             this.myEditTextBox5.IsIdentified = false;
             this.myEditTextBox5.IsKeyField = false;
             this.myEditTextBox5.IsValid = true;
-            this.myEditTextBox5.Location = new System.Drawing.Point(3, 202);
+            this.myEditTextBox5.Location = new System.Drawing.Point(33, 189);
             this.myEditTextBox5.Name = "myEditTextBox5";
             this.myEditTextBox5.RegexDesc = "";
             this.myEditTextBox5.RegexRule = "";
@@ -280,16 +280,16 @@
             this.myEditComBoxTree1.ShowField = "f_pid";
             this.myEditComBoxTree1.ShowFieldValue = "未将对象引用设置到对象的实例。";
             this.myEditComBoxTree1.Size = new System.Drawing.Size(186, 20);
-            this.myEditComBoxTree1.TabIndex = 19;
+            this.myEditComBoxTree1.TabIndex = 0;
             this.myEditComBoxTree1.TableName = "";
-            this.myEditComBoxTree1.TreeNodeName = "树名称";
+            this.myEditComBoxTree1.TreeNodeName = "仓库";
             this.myEditComBoxTree1.ValueChanged += new YongFa365.Controls.ComboBoxTree.DropDownValueChangedEventHandler(this.myEditComBoxTree1_ValueChanged);
             // 
             // FormWareHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 243);
+            this.ClientSize = new System.Drawing.Size(252, 252);
             this.Name = "FormWareHouse";
             this.Table = "CK_WAREHOUSE";
             this.Text = "仓库管理";

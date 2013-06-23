@@ -13,12 +13,11 @@ namespace CK_PluginOrder
 {
     public partial class FormCreateOrder : FormBase
     {
-        public FormCreateOrder(IApplication iapp, IDataService _ids, string sqlguid)
+        public FormCreateOrder(IApplication iapp, IDataService _ids)
         {
             InitializeComponent();
             _iapplication = iapp;
             ids = _ids;
-            PlugSqlGuid = sqlguid;
         }
         public override void AfterShowForm()
         {

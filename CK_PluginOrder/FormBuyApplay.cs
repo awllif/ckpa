@@ -27,6 +27,7 @@ namespace CK_PluginOrder
             myAgencyName.FieldValue = ir.AgencyName;
             if(FType == FormType.Insert)
                 myOrderNumber.FieldValue = "SQ"+ ir.UserId + DateTime.Now.ToString("yyMMddhhmmss");
+            myState.ShowFieldValue = "0";
             base.AfterShowForm();
         }
 

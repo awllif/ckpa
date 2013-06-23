@@ -31,14 +31,12 @@
             this.myEditTextBox1 = new Rock.Interface.MyEditTextBox();
             this.myEditTextBox2 = new Rock.Interface.MyEditTextBox();
             this.myOrderNumber = new Rock.Interface.MyEditTextBox();
-            this.myEditComboBox1 = new Rock.Interface.MyEditComboBox();
             this.butOk = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.butCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.myEditTextBox3 = new Rock.Interface.MyEditTextBox();
@@ -46,6 +44,7 @@
             this.myUserName = new Rock.Interface.MyEditTextBox();
             this.myAgencyName = new Rock.Interface.MyEditTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.myState = new Rock.Interface.MyEditComboBox();
             this.pnelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +63,7 @@
             // 
             // pnelMain
             // 
+            this.pnelMain.Controls.Add(this.myState);
             this.pnelMain.Controls.Add(this.myAgencyName);
             this.pnelMain.Controls.Add(this.myUserName);
             this.pnelMain.Controls.Add(this.myEditTextBox4);
@@ -71,7 +71,6 @@
             this.pnelMain.Controls.Add(this.myEditTextBox1);
             this.pnelMain.Controls.Add(this.myEditTextBox2);
             this.pnelMain.Controls.Add(this.myOrderNumber);
-            this.pnelMain.Controls.Add(this.myEditComboBox1);
             this.pnelMain.Controls.Add(this.butOk);
             this.pnelMain.Controls.Add(this.label1);
             this.pnelMain.Controls.Add(this.label7);
@@ -81,7 +80,6 @@
             this.pnelMain.Controls.Add(this.butCancel);
             this.pnelMain.Controls.Add(this.label8);
             this.pnelMain.Controls.Add(this.label3);
-            this.pnelMain.Controls.Add(this.label2);
             this.pnelMain.Size = new System.Drawing.Size(478, 288);
             // 
             // myEditTextBox1
@@ -155,32 +153,6 @@
             this.myOrderNumber.TabIndex = 0;
             this.myOrderNumber.TableName = null;
             // 
-            // myEditComboBox1
-            // 
-            this.myEditComboBox1.Datarow = null;
-            this.myEditComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.myEditComboBox1.EditField = "F_STATE";
-            this.myEditComboBox1.EditFieldType = System.Data.SqlDbType.Int;
-            this.myEditComboBox1.FieldMaxLength = 0;
-            this.myEditComboBox1.FieldMinLength = 0;
-            this.myEditComboBox1.FieldValue = "";
-            this.myEditComboBox1.FormattingEnabled = true;
-            this.myEditComboBox1.iapplication = null;
-            this.myEditComboBox1.IsCanEdit = true;
-            this.myEditComboBox1.IsIdentified = false;
-            this.myEditComboBox1.IsKeyField = false;
-            this.myEditComboBox1.IsValid = true;
-            this.myEditComboBox1.ItemsSql = "SELECT f_value as f_state,f_name from t_base_dict where f_code=\'CM_OSTATE\'";
-            this.myEditComboBox1.Location = new System.Drawing.Point(64, 259);
-            this.myEditComboBox1.Name = "myEditComboBox1";
-            this.myEditComboBox1.RegexDesc = "";
-            this.myEditComboBox1.RegexRule = "";
-            this.myEditComboBox1.ShowField = "f_name";
-            this.myEditComboBox1.ShowFieldValue = "";
-            this.myEditComboBox1.Size = new System.Drawing.Size(90, 20);
-            this.myEditComboBox1.TabIndex = 7;
-            this.myEditComboBox1.TableName = "";
-            // 
             // butOk
             // 
             this.butOk.Location = new System.Drawing.Point(303, 256);
@@ -236,15 +208,6 @@
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 72;
             this.label3.Text = "申请人";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 263);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 12);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "状态:";
             // 
             // label6
             // 
@@ -371,6 +334,33 @@
             this.label8.TabIndex = 72;
             this.label8.Text = "完成时间";
             // 
+            // myState
+            // 
+            this.myState.Datarow = null;
+            this.myState.EditField = "F_STATE";
+            this.myState.EditFieldType = System.Data.SqlDbType.Int;
+            this.myState.FieldMaxLength = 0;
+            this.myState.FieldMinLength = 0;
+            this.myState.FieldValue = "";
+            this.myState.FormattingEnabled = true;
+            this.myState.iapplication = null;
+            this.myState.IsCanEdit = false;
+            this.myState.IsIdentified = false;
+            this.myState.IsKeyField = false;
+            this.myState.IsValid = true;
+            this.myState.ItemsSql = "SELECT F_VALUE AS F_STATE,F_NAME AS F_STATENAME FROM T_BASE_DICT WHERE F_CODE=\'CM" +
+                "_OSTATE\'";
+            this.myState.Location = new System.Drawing.Point(64, 256);
+            this.myState.Name = "myState";
+            this.myState.RegexDesc = "";
+            this.myState.RegexRule = "";
+            this.myState.ShowField = "F_STATENAME";
+            this.myState.ShowFieldValue = "";
+            this.myState.Size = new System.Drawing.Size(121, 20);
+            this.myState.TabIndex = 7;
+            this.myState.TableName = "";
+            this.myState.Visible = false;
+            // 
             // FormBuyApplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -390,14 +380,12 @@
         private Rock.Interface.MyEditTextBox myEditTextBox1;
         private Rock.Interface.MyEditTextBox myEditTextBox2;
         private Rock.Interface.MyEditTextBox myOrderNumber;
-        private Rock.Interface.MyEditComboBox myEditComboBox1;
         private System.Windows.Forms.Button butOk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button butCancel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private Rock.Interface.MyEditTextBox myEditTextBox4;
@@ -405,5 +393,6 @@
         private Rock.Interface.MyEditTextBox myAgencyName;
         private Rock.Interface.MyEditTextBox myUserName;
         private System.Windows.Forms.Label label8;
+        private Rock.Interface.MyEditComboBox myState;
     }
 }

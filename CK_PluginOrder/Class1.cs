@@ -36,6 +36,7 @@ namespace CK_PluginOrder
 
             //标题,字段,宽度,是否主键,是否显示
             this.InitialCaption();
+            TipField = "审批流程:,f_stepname,\r\n详细描述:,f_desc";
             ////颜色控制列表
             //this.RegWhere(new object[] { 
             //                            new object[]{ "F_StateName","草稿",Color.Red},
@@ -81,6 +82,7 @@ namespace CK_PluginOrder
             FormBuyApplay FBA = new FormBuyApplay(iapplication, idataservice, GetPlugQueryCmdInfo());
             FBA.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
             FBA.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.Int, ir.AgencyId);
+            
             FBA.ShowForm(FormType.Insert);
            // FormCreateOrder FCO = new FormCreateOrder(iapplication,idataservice,GetPlugQueryCmdInfo());
            // 
@@ -112,7 +114,7 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("采购添加", iapplication, CommandTriger.ON, (int)ImageType.ADD);
+            Command cmdAdd = new Command("采购咨询", iapplication, CommandTriger.ON, (int)ImageType.ADD);
             //Command cmdEdit = new Command("", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             //Command cmdDetail = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             // Command cmdPrint = new Command("人员查看", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
@@ -152,9 +154,9 @@ namespace CK_PluginOrder
         }
         void cmdAdd_Click(object sender, EventArgs e)
         {
-            FormCreateOrder FCO = new FormCreateOrder(iapplication, idataservice,GetPlugQueryCmdInfo());
+            FormCreateOrder FCO = new FormCreateOrder(iapplication, idataservice);
             IRight ir = (IRight)iapplication.GetService(typeof(IRight));
-            FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
+            FCO.RegStatickElement("F_APPLAYUSER", System.Data.SqlDbType.Int, ir.UserId);//谁负责咨询，采购下单由谁负责；
             // FCO.RegStatickElement("F_CREATENAME", System.Data.SqlDbType.VarChar, ir.UserName);
             // FCO.RegStatickElement("F_CREATEAGENCY", System.Data.SqlDbType.VarChar, ir.AgencyName);
             FCO.ShowForm(FormType.Edit);
@@ -164,7 +166,7 @@ namespace CK_PluginOrder
     [PlugNameAttribute("采购处理"),
     PlugQueryFormAttribute("Order_Qurey"),
     PlugWriterAttribute(""),
-    PlugQueryCmdAttribute("8b904afc-6b23-4bd7-ae33-3ce8a7f93cdf"),
+    PlugQueryCmdAttribute("47700dff-8add-406a-a861-7a0eaab84f90"),
     PlugActionAttribute("商品类别"),
     PlugDescriptionAttribute("商品类别 ")]
     public partial class CKPlugOrderDeal : PluginNode
@@ -176,15 +178,16 @@ namespace CK_PluginOrder
         {
             //NodeBitmap = Resource.driver;
             //注册功能按钮
-            Command cmdAdd = new Command("创建采购单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            Command cmdAdd = new Command("采购下单", iapplication, CommandTriger.OFF, (int)ImageType.ADD);
+            Command cmdEdit = new Command("订单编辑", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             Command cmdPackage = new Command("到货确认", iapplication, CommandTriger.ON, (int)ImageType.EDIT);
             Command cmdPay = new Command("订单付款", iapplication, CommandTriger.ON, (int)ImageType.PRINT01);
             Command cmdPrint = new Command("订单详情", iapplication, CommandTriger.ON, (int)ImageType.PRINT02);
             Command cmdStore = new Command("采购入库", iapplication, CommandTriger.ON, (int)ImageType.CONFIG01);
             cmdAdd.Click += new EventHandler(cmdAdd_Click);
-     
+            cmdEdit.Click+=new EventHandler(cmdEdit_Click);
             //建立功能按钮点击处理函数
-            RegCommand(cmdAdd, cmdPackage, cmdPay,cmdPrint);
+            RegCommand(cmdAdd, cmdEdit,cmdPackage, cmdPay,cmdPrint);
 
             //标题,字段,宽度,是否主键,是否显示
             this.InitialCaption();
@@ -213,11 +216,13 @@ namespace CK_PluginOrder
         }
         void cmdEdit_Click(object sender, EventArgs e)
         {
-
+            FormApplayOrder fao = new FormApplayOrder(iapplication, idataservice);
+            fao.ShowForm(FormType.Edit);
         }
         void cmdAdd_Click(object sender, EventArgs e)
         {
-     
+            FormApplayOrder fao = new FormApplayOrder(iapplication, idataservice);
+            fao.ShowForm(FormType.Insert);
             //FormCreateOrder FCO = new FormCreateOrder(iapplication, idataservice,GetPlugQueryCmdInfo());
             //IRight ir = (IRight)iapplication.GetService(typeof(IRight));
             //FCO.RegStatickElement("F_CREATEUSER", System.Data.SqlDbType.Int, ir.UserId);
